@@ -28,12 +28,17 @@ public class AnnotationApp {
 		
 		// setter injection class
 		
-		Car carSetterInj=context.getBean("sportsCarSetterInj",SportsCarSetterInj.class);
+		SportsCarSetterInj carSetterInj=context.getBean("sportsCarSetterInj",SportsCarSetterInj.class);
 		
 		System.out.println("Setter injection ->"+carSetterInj.getEngineMaintenance());
 		System.out.println("Setter injection ->"+carSetterInj.getMileage());
 		
 		
+		// method injection class
+		
+		SportsCarMethodInj carMethodInj = context.getBean("sportsCarMethodInj",SportsCarMethodInj.class);
+		
+		System.out.println("Method injection ->"+carMethodInj.getEngineMaintenance());
 		
 		//close container
 		context.close();

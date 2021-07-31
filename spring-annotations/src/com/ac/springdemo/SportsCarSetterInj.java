@@ -9,10 +9,12 @@ public class SportsCarSetterInj implements Car {
 
 	private CarMaintenance carMaintenance;
 	
+	//default constructor
 	public SportsCarSetterInj() {
 		System.out.println("-> No args SportsCarSetterInj constructor");
 		
 	}
+	// setter injection
 	@Autowired
 	public void setCarMaintenance(CarMaintenance carMaintenance) {
 		this.carMaintenance = carMaintenance;
