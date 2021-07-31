@@ -4,41 +4,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SportsCar implements Car {
+public class SportsCarSetterInj implements Car {
+
 
 	private CarMaintenance carMaintenance;
 	
+	public SportsCarSetterInj() {
+		
+	}
 	@Autowired
-	public SportsCar(CarMaintenance carMaintenance) {
+	public void setCarMaintenance(CarMaintenance carMaintenance) {
 		this.carMaintenance = carMaintenance;
 	}
-	// created a no arg constructor to test the @Autowired function
-	// @Autowired is not needed when there is only one constructor since Spring 4.3
-	public SportsCar() {
-		
-	}
-	
 	@Override
 	public String startCar() {
-		
-		return "Press clutch and turn the igniton on.";
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public String getEngineMaintenance() {
-		
 		return carMaintenance.getEngineMaintenanceDate();
 	}
 
 	@Override
 	public int getMileage() {
-
-		return carMaintenance.getMileage();
+		return 10250;
+		// hard coded value to compare to value from above which is taken from carMaintenance
 	}
-	
-	
-
-
-	
 
 }
