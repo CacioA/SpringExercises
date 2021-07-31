@@ -10,6 +10,7 @@ public class SportsCarSetterInj implements Car {
 	private CarMaintenance carMaintenance;
 	
 	public SportsCarSetterInj() {
+		System.out.println("-> No args SportsCarSetterInj constructor");
 		
 	}
 	@Autowired

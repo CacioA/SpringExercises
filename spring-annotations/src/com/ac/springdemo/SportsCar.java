@@ -11,6 +11,7 @@ public class SportsCar implements Car {
 	@Autowired
 	public SportsCar(CarMaintenance carMaintenance) {
 		this.carMaintenance = carMaintenance;
+		System.out.println("-> Autowired constructor SportsCar");
 	}
 	// created a no arg constructor to test the @Autowired function
 	// @Autowired is not needed when there is only one constructor since Spring 4.3
