@@ -3,6 +3,5 @@
 
 ## Completed so far:
 
-### - > Inversion of Control
-- > Dependency Injection
-- > Bean scope & life-cycle
+- > XML: Inversion of Control, Dependency Injection (Constructor, Setter, Literals, from file),  Bean scope & life-cycle
+- > Annotations: Inversion of Control, Dependency Injection (Constructor, Setter, Method, Field)
