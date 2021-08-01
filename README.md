@@ -3,6 +3,6 @@
 
 ## Completed so far:
 
-- > Inversion of Control
+### - > Inversion of Control
 - > Dependency Injection
 - > Bean scope & life-cycle
