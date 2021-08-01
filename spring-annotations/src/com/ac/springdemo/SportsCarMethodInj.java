@@ -1,21 +1,35 @@
 package com.ac.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype")
 public class SportsCarMethodInj implements Car {
 
 	
-	private CarMaintenance carMaintenance;
+	private EngineMaintenance carMaintenance;
 	// default constructor
 	public SportsCarMethodInj() {
 		System.out.println("-> SportsCarMethodInj constructor");
 	}
 	
+	@PostConstruct
+	public void initMethod() {
+		System.out.println("-> Inside PostConstrcut method - Open door and put the key in.");
+	}
+	
+	
+	
 	// method injection
 	@Autowired
-	public void testingMethodInjection(CarMaintenance carMaintenance) {
+	@Qualifier("sportsCarMaintenance")
+	public void testingMethodInjection(EngineMaintenance carMaintenance) {
 		this.carMaintenance = carMaintenance;
 		System.out.println("Inside methodInj ->"+carMaintenance.getEngineMaintenanceDate());
 		
@@ -24,19 +38,19 @@ public class SportsCarMethodInj implements Car {
 	@Override
 	public String startCar() {
 	
-		return null;
+		return  "Press clutch and turn the igniton on.";
 	}
 
 	@Override
 	public String getEngineMaintenance() {
 		
-		return "5000";
+		return carMaintenance.getEngineMaintenanceDate();
 	}
 
 	@Override
-	public int getMileage() {
+	public String getMileage() {
 		
-		return 10;
+		return carMaintenance.getMileage();
 	}
 
 }

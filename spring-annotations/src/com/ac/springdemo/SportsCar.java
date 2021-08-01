@@ -6,10 +6,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class SportsCar implements Car {
 
-	private CarMaintenance carMaintenance;
+	private SportsCarMaintenance carMaintenance;
 	
 	@Autowired
-	public SportsCar(CarMaintenance carMaintenance) {
+	public SportsCar(SportsCarMaintenance carMaintenance) {
 		this.carMaintenance = carMaintenance;
 		System.out.println("-> Autowired constructor SportsCar");
 	}
@@ -32,7 +32,7 @@ public class SportsCar implements Car {
 	}
 
 	@Override
-	public int getMileage() {
+	public String getMileage() {
 
 		return carMaintenance.getMileage();
 	}

@@ -4,5 +4,5 @@ public interface EngineMaintenance {
 
 	public String getEngineMaintenanceDate();
 	
-	public int getMileage();
+	public String getMileage();
 }

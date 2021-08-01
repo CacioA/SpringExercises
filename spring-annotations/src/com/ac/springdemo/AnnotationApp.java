@@ -21,10 +21,13 @@ public class AnnotationApp {
 		System.out.println(car.startCar());
 		
 		// call methods to get maintenance
+		System.out.println("----------------------");
+		System.out.println("----------------------");
 		
 		System.out.println("Constructor injection ->"+car.getEngineMaintenance());
 		System.out.println("Constructor injection ->"+car.getMileage());
-		
+		System.out.println("----------------------");
+		System.out.println("----------------------");
 		
 		// setter injection class
 		
@@ -32,6 +35,8 @@ public class AnnotationApp {
 		
 		System.out.println("Setter injection ->"+carSetterInj.getEngineMaintenance());
 		System.out.println("Setter injection ->"+carSetterInj.getMileage());
+		System.out.println("----------------------");
+		System.out.println("----------------------");
 		
 		
 		// method injection class
@@ -39,7 +44,18 @@ public class AnnotationApp {
 		SportsCarMethodInj carMethodInj = context.getBean("sportsCarMethodInj",SportsCarMethodInj.class);
 		
 		System.out.println("Method injection ->"+carMethodInj.getEngineMaintenance());
-
+		System.out.println("Method injection ->"+carMethodInj.startCar());
+		System.out.println("----------------------");
+		System.out.println("----------------------");
+		
+		SportsCarMethodInj secondCarMethodInj = context.getBean("sportsCarMethodInj",SportsCarMethodInj.class);
+		
+		System.out.println("Scope set to prototype. Comparing the two beans");
+		System.out.println((carMethodInj==secondCarMethodInj));
+		System.out.println("carMethodInj memory address:"+carMethodInj);
+		System.out.println("secondCarMethodInj memory address:"+secondCarMethodInj);
+		System.out.println("----------------------");
+		System.out.println("----------------------");
 		
 		// field injection class
 		
@@ -47,6 +63,10 @@ public class AnnotationApp {
 		
 		System.out.println("Field injection ->"+suvFieldInj.getEngineMaintenance());
 		System.out.println("Field injection ->"+suvFieldInj.getMileage());
+		System.out.println("Field injection ->"+suvFieldInj.startCar());
+		System.out.println("----------------------");
+		System.out.println("----------------------");
+		
 		//close container
 		context.close();
 	}

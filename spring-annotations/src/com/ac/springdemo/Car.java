@@ -6,6 +6,6 @@ public interface Car {
 	
 	public String getEngineMaintenance();
 	
-	public int getMileage();
+	public String getMileage();
 
 }

@@ -1,13 +1,14 @@
 package com.ac.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SportsCarSetterInj implements Car {
 
 
-	private CarMaintenance carMaintenance;
+	private EngineMaintenance carMaintenance;
 	
 	//default constructor
 	public SportsCarSetterInj() {
@@ -16,13 +17,14 @@ public class SportsCarSetterInj implements Car {
 	}
 	// setter injection
 	@Autowired
-	public void setCarMaintenance(CarMaintenance carMaintenance) {
+	@Qualifier("sportsCarMaintenance")
+	public void setCarMaintenance(EngineMaintenance carMaintenance) {
 		this.carMaintenance = carMaintenance;
 	}
 	@Override
 	public String startCar() {
 		// TODO Auto-generated method stub
-		return null;
+		return  "Press clutch and turn the igniton on.";
 	}
 
 	@Override
@@ -31,8 +33,8 @@ public class SportsCarSetterInj implements Car {
 	}
 
 	@Override
-	public int getMileage() {
-		return 10250;
+	public String getMileage() {
+		return "10250";
 		// hard coded value to compare to value from above which is taken from carMaintenance
 	}
 
