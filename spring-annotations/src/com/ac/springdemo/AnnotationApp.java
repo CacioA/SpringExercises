@@ -40,6 +40,12 @@ public class AnnotationApp {
 		
 		System.out.println("Method injection ->"+carMethodInj.getEngineMaintenance());
 		
+		// field injection class
+		
+		SuvFieldInj suvFieldInj = context.getBean("suvFieldInj",SuvFieldInj.class);
+		
+		System.out.println("Field injection ->"+suvFieldInj.getEngineMaintenance());
+		System.out.println("Field injection ->"+suvFieldInj.getMileage());
 		//close container
 		context.close();
 	}
