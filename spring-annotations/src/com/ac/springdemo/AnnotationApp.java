@@ -35,10 +35,11 @@ public class AnnotationApp {
 		
 		
 		// method injection class
-		
+
 		SportsCarMethodInj carMethodInj = context.getBean("sportsCarMethodInj",SportsCarMethodInj.class);
 		
 		System.out.println("Method injection ->"+carMethodInj.getEngineMaintenance());
+
 		
 		// field injection class
 		
